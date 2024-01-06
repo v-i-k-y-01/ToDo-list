@@ -1,0 +1,113 @@
+<!-- index.html -->
+<style>
+    /* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+#list-container {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #bd2130;
+}
+
+#input {
+  padding: 8px;
+  width: 70%;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#add-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background-color: #218838;
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+    <input id="input" placeholder="Add a new task">
+    <button id="add-btn" onclick="add()">Add</button>
+    <ul id="list-container">
+      <!-- <li>Hello
+        <button onclick="deleteItem(event)">Delete</button>
+      </li> -->
+    </ul>
+  </div>
+  <script>
+     var input=document.getElementById("input");
+  var ul=document.getElementById("list-container");
+  function add()
+  {
+    var listitem=document.createElement("li");
+    listitem.innerHTML=input.value+"<button onclick='deleteItem(event)'> Delete</button>";
+    ul.append(listitem);
+
+  }
+  function deleteItem()
+  
+  {
+    event.target.parentElement.remove();
+  }
+  </script>
+</body>
+</html>
